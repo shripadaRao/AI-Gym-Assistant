@@ -20,9 +20,12 @@ def calculate_angle(a,b,c):
 # Curl counter variables
 counter_left = -1
 counter_right = -1
-#stage = None
 up_left = False
 up_right = False 
+
+#Start time
+from time import gmtime, strftime
+start_time = strftime("%H:%M:%S")
 
 cap = cv2.VideoCapture(0)
 
@@ -127,11 +130,14 @@ path = "pics/pic2"
 im = cv2.imread(path + ".png", 1)
 font = cv2.FONT_HERSHEY_TRIPLEX
 
-from time import gmtime, strftime
-dt_time = strftime("%a, %d %b %Y %H:%M:%S")
-cv2.putText(im, '{}'.format(dt_time), (470,800), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2, cv2.LINE_AA)
+#end time and all
+dt_time = strftime("%a, %d %b")
+end_time = strftime("%H:%M:%S")
+cv2.putText(im, 'Start Time : {}'.format(start_time), (500,275), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2, cv2.LINE_AA)
+cv2.putText(im, 'End Time : {}'.format(end_time), (500,325), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2, cv2.LINE_AA)
+cv2.putText(im, '{}'.format(dt_time), (600,150), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 0), 2, cv2.LINE_AA)
 
 cv2.putText(im, 'Your Left Reps is {}'.format(counter_left), (500,500), font, 1.1, (0, 0, 0), 2, cv2.LINE_AA)
 cv2.putText(im, 'Your Right Reps is {}'.format(counter_right), (500,575), font, 1.1, (0, 0, 0), 2, cv2.LINE_AA)
-cv2.putText(im, 'Your Total Reps is {}'.format(total_reps), (450,700), font, 1.3, (0, 0, 0), 2, cv2.LINE_AA)
+cv2.putText(im, 'Your Total Reps is {}'.format(total_reps), (450,650), font, 1.3, (0, 0, 0), 2, cv2.LINE_AA)
 cv2.imwrite(path + '_1.jpg', im)
