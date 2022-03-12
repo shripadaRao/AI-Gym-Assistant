@@ -1,5 +1,5 @@
 import os
-import mediapipe as mp
+import mediapipe as mp #docs https://google.github.io/mediapipe/solutions/pose
 import cv2
 import numpy as np
 mp_drawing = mp.solutions.drawing_utils
@@ -97,15 +97,17 @@ with mp_pose.Pose(min_detection_confidence=0.75, min_tracking_confidence=0.75) a
         # Rep data
         cv2.putText(image, 'Left Reps', (12,16), 
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0,0,0), 1, cv2.LINE_AA)
-        cv2.putText(image, str(counter_right), 
+        cv2.putText(image, str(counter_left), 
                     (10,70), 
                     cv2.FONT_HERSHEY_DUPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
 
         cv2.putText(image, 'Right Reps', (500,16), 
                     cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0,0,0), 1, cv2.LINE_AA)
-        cv2.putText(image, str(counter_left), 
+        cv2.putText(image, str(counter_right), 
                     (500,70), 
                     cv2.FONT_HERSHEY_DUPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
+
+        cv2.putText(image,'Press "q" to exit', (12,450),cv2.FONT_HERSHEY_COMPLEX, 0.6, (0,0,0), 1, cv2.LINE_AA)
         
 
         # Render detections
@@ -122,13 +124,14 @@ with mp_pose.Pose(min_detection_confidence=0.75, min_tracking_confidence=0.75) a
     cap.release()
     cv2.destroyAllWindows()
 
-text = "Congrats!. you have done {} left reps and {} right reps. Total Number of reps is {}.".format(counter_left, counter_right, counter_right+counter_left)
+text = "Congrats!.\n Left Reps : {} \n Right Reps : {} \n Total Reps : {} .".format(counter_left, counter_right, counter_right+counter_left)
 print(text)
 print("Please do check the result dir for the auto generated result :)")
 
 total_reps = counter_left + counter_right
 path = "pics/pic2"
 im = cv2.imread(path + ".png", 1)
+
 font = cv2.FONT_HERSHEY_TRIPLEX
 
 #end time and all
@@ -152,7 +155,7 @@ import sqlite3
 
 # Order for parameters
 # (start_time,end_time,date,left,right,total)
-# test.add(start_time,end_time,dt,counter_left,counter_right,total_reps)
+test.add(start_time,end_time,dt,counter_left,counter_right,total_reps)
 
 #code to show data
 #test.show_all()
