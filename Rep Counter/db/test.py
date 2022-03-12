@@ -10,10 +10,10 @@ import sqlite3
 # #         right int,
 # #         total int
 # # )""")
-
+db_path = "/home/shripad/Projects/AI-Pose-Estimation/Rep Counter/db/rep.db" #add path NOT relataive path
 
 def add(start_time,end_time,date,left,right,total):
-    db_path = "db/rep.db"
+    
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
 
@@ -22,7 +22,7 @@ def add(start_time,end_time,date,left,right,total):
     conn.close()
 
 def show_all():
-    db_path = "db/rep.db"
+    
     conn = sqlite3.connect(db_path)
     c= conn.cursor()
 
@@ -37,7 +37,7 @@ def show_all():
     conn.close()
 
 def delete_row(row_no):
-    db_path = "db/rep.db"
+    #db_path = '~/Projects/AI-Pose-Estimation/Rep Counter/db/rep.db'
     conn = sqlite3.connect(db_path)
     c= conn.cursor()
 
@@ -45,3 +45,4 @@ def delete_row(row_no):
 
     conn.commit()    
     conn.close()
+
