@@ -37,3 +37,8 @@ Data is stored in a database(sqlite3) which later can be used to create analytic
 ```
 python3 rep_counter.py
 ```
+
+### To View History
+``` cd db ```
+
+``` python3 history.py```
