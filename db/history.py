@@ -3,8 +3,8 @@ import sqlite3 as sql
 import os
 import csv
 
-path = "/home/shripad/Projects/AI-Pose-Estimation/Rep Counter/db/rep.db"
-conn =  sql.connect(path)
+db_path = "/home/shripad/Projects/AI-Pose-Estimation/Rep Counter/db/rep.db"
+conn =  sql.connect(db_path)
 
 print("\n *--History--*")
 print("start_time, end_time, date, left, right, total")
