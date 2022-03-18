@@ -1,0 +1,39 @@
+plank counter logic
+
+time = 0
+time increments when position is assumed
+position is angle between shoulder,elbow, wrist is almost 90.
+time is stopped when position is not assumed.
+
+position = angle(shoulder,elbow, wrist)
+80<position<100 -> increment time
+or -> time stop
+
+import time
+while True:
+    try:
+        input("Press Enter to continue and ctrl+C to exit the stopwatch")
+        start_time=time.time()
+        print("Stopwatch has started")
+        while True:
+            print("Time elapsed:",round(time.time()-start_time,0),'secs',end='\n')
+            time.sleep(1)
+    except KeyboardInterrupt:
+        print("Timer has stopped")
+        end_time=time.time()
+        print("The time elapsed:",round(end_time-start_time,2),'secs')
+        break
+
+while(True):        
+    print('\t\t\t\t  %d : %d : %d '%(hours,minute,second))    
+        
+    time.sleep(1)    
+    second+=1    
+    if(second == 60):    
+        second = 0    
+        minute+=1    
+    if(minute == 60):    
+        minute = 0    
+        hour+=1;    
+    os.system('cls') 
+
