@@ -23,7 +23,7 @@ Data is stored in a database(sqlite3) which later can be used to create analytic
 ### Example
 
 ![reps](https://user-images.githubusercontent.com/90824601/154799596-6a7bb500-61a4-490a-825b-2451cf5f91e9.gif)
-<img src="https://user-images.githubusercontent.com/90824601/154799799-8a24871f-cc0e-45dd-a8f2-67f2cc9f5c83.png" width="500" height="330" />
+<img src="https://user-images.githubusercontent.com/90824601/160833392-e9055fcd-683b-4df8-88a6-ad5ffe36f601.png" width="500" height="330" />
 <img src= "https://user-images.githubusercontent.com/90824601/154799638-b9b0ee93-4ede-4045-aed0-a42dfa8a3da6.jpg" width="500" height="330"/>
 
 ### Instructions to use the app
